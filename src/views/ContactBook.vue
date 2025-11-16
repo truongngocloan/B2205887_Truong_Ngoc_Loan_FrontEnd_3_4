@@ -17,6 +17,17 @@
             <div v-if="activeContact">
                 <h4>Chi tiết Liên hệ<i class="fas fa-address-card"></i></h4>
                 <ContactCard :contact="activeContact" />
+                <!-- Thêm đường liên kết đến trang hiệu chỉnh từ trang ContactBook (src/views/ContactBook.vue) -->
+                <router-link
+                    :to="{
+                    name: 'contact.edit',
+                    params: { id: activeContact._id },
+                    }"
+                >
+                    <span class="mt-2 badge badge-warning">
+                    <i class="fas fa-edit"></i> Hiệu chỉnh</span>
+                </router-link>
+                <!-- Thêm đường liên kết đến trang hiệu chỉnh từ trang ContactBook (src/views/ContactBook.vue) -->
             </div>
         </div>
     </div>
